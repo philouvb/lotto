@@ -12,6 +12,7 @@ int main(int argc, char **argv) {
     tirage(EUROMILLIONS_NUMBERS_TO_PICK, EUROMILLIONS_CEILING_NUMBER);
     printf("------- ");
     tirage(EUROMILLIONS_STARS_TO_PICK, EUROMILLIONS_STARS_CEILING_NUMBER);
+    printf("\n");
 
     return 0;
 }
