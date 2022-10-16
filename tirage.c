@@ -4,14 +4,16 @@
 #include <stdlib.h>
 #include "tirage.h"
 
+#define LENGTH(a) sizeof(a) / sizeof(a[0])
+
 void tirage(int numbers_to_pick, int ceiling_number)
 {
     int number = 0;
-    int numbers[6];
+    int numbers[numbers_to_pick];
     bool unique;
 
     srand(time(NULL));
-    for(int i = 0; i < numbers_to_pick; i++ )
+    for(int i = 0; i <  LENGTH(numbers); i++ )
     {
         do{
               /* Pick a number between 1 and ceiling number */
