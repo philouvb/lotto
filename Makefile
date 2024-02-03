@@ -1,9 +1,22 @@
 CC=gcc
-CFLAGS="-Wall"
+CFLAGS=-Wall -Wextra -pedantic
+LIBFLAGS=-c -g
 
-debug:clean
-	$(CC) $(CFLAGS) -g -o lotto main.c tirage.c
-stable:clean
-	$(CC) $(CFLAGS) -o lotto main.c tirage.c
+all: tirage
+
+tirage: main.o libtirage.a
+	$(CC) $(CFLAGS) -o lotto main.o -L. -ltirage
+
+main: main.c
+	$(CC) $(LIBFLAGS) main.c
+
+tirage.o: tirage.c tirage.h
+	$(CC) $(LIBFLAGS) tirage.c
+
+libtirage.a: tirage.o
+	ar rcs libtirage.a tirage.o
+
+libs: libtirage.a
+
 clean:
-	rm -vfr *~ lotto
+	rm -vfr *~ *.o *.a *.gch lotto

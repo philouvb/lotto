@@ -2,7 +2,7 @@
 #include "constants.h"
 #include "tirage.h"
 
-int main(int argc, char **argv) {
+int main() {
 
     printf("---TIRAGE DU LOTTO---\n");
     tirage(LOTTO_NUMBERS_TO_PICK, LOTTO_CEILING_NUMBER);

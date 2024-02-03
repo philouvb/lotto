@@ -5,7 +5,7 @@
 #ifndef __TIRAGE_H__
 #define __TIRAGE_H__
 
-void tirage(int numbers_to_pick, int ceiling_number);
+extern void tirage(int numbers_to_pick, int ceiling_number);
 
 
 
